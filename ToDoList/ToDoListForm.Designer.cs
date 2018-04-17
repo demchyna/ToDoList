@@ -39,6 +39,7 @@
             this.addTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -95,6 +96,7 @@
             // 
             // todoPanel
             // 
+            this.todoPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.todoPanel.Controls.Add(this.todoListBox);
             this.todoPanel.Controls.Add(this.upButton);
             this.todoPanel.Controls.Add(this.downButton);
@@ -143,6 +145,7 @@
             // fileMenuItem
             // 
             this.fileMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newMenuItem,
             this.openMenuItem,
             this.saveMenuItem,
             this.toolStripSeparator1,
@@ -151,27 +154,34 @@
             this.fileMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileMenuItem.Text = "File";
             // 
+            // newMenuItem
+            // 
+            this.newMenuItem.Name = "newMenuItem";
+            this.newMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newMenuItem.Text = "New";
+            this.newMenuItem.Click += new System.EventHandler(this.NewMenuItem_Click);
+            // 
             // openMenuItem
             // 
             this.openMenuItem.Name = "openMenuItem";
-            this.openMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.openMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openMenuItem.Text = "Open";
             // 
             // saveMenuItem
             // 
             this.saveMenuItem.Name = "saveMenuItem";
-            this.saveMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.saveMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveMenuItem.Text = "Save";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(100, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // exitMenuItem
             // 
             this.exitMenuItem.Name = "exitMenuItem";
-            this.exitMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.exitMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitMenuItem.Text = "Exit";
             // 
             // helpMenuItem
@@ -232,7 +242,7 @@
             this.MinimizeBox = false;
             this.Name = "ToDoListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "To-Do List App";
+            this.Text = "Unknown - ToDo List";
             this.todoPanel.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -264,6 +274,7 @@
         private System.Windows.Forms.Label showLabel;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel statusLabel;
+        private System.Windows.Forms.ToolStripMenuItem newMenuItem;
     }
 }
 

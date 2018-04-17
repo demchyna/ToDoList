@@ -113,5 +113,23 @@ namespace ToDoList
                 showLabel.Text = item.ToString();
             }
         }
+
+        private void NewMenuItem_Click(object sender, EventArgs e)
+        {
+            NewDialog newDialog = new NewDialog();
+
+            newDialog.StartPosition = FormStartPosition.CenterParent;
+            
+            newDialog.ShowDialog();
+
+            if (newDialog.DialogResult == DialogResult.OK)
+            {
+                addTextBox.Text = "";
+                todoListBox.Items.Clear();
+
+                Text = newDialog.Controls.Find("nameTextBox", false)[0].Text + " - ToDo List";
+            }
+            newDialog.Dispose();
+        }
     }
 }
