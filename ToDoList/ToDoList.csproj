@@ -51,6 +51,12 @@
     <Compile Include="NewDialog.Designer.cs">
       <DependentUpon>NewDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="OpenDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenDialog.Designer.cs">
+      <DependentUpon>OpenDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToDoListForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="NewDialog.resx">
       <DependentUpon>NewDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenDialog.resx">
+      <DependentUpon>OpenDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToDoListForm.resx">
       <DependentUpon>ToDoListForm.cs</DependentUpon>

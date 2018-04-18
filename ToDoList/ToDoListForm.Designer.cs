@@ -56,6 +56,7 @@
             // 
             // addButton
             // 
+            this.addButton.Enabled = false;
             this.addButton.Location = new System.Drawing.Point(197, 35);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
@@ -101,6 +102,7 @@
             this.todoPanel.Controls.Add(this.upButton);
             this.todoPanel.Controls.Add(this.downButton);
             this.todoPanel.Controls.Add(this.deleteButton);
+            this.todoPanel.Enabled = false;
             this.todoPanel.Location = new System.Drawing.Point(12, 64);
             this.todoPanel.Name = "todoPanel";
             this.todoPanel.Size = new System.Drawing.Size(260, 138);
@@ -118,6 +120,7 @@
             // addLabel
             // 
             this.addLabel.AutoSize = true;
+            this.addLabel.Enabled = false;
             this.addLabel.Location = new System.Drawing.Point(12, 40);
             this.addLabel.Name = "addLabel";
             this.addLabel.Size = new System.Drawing.Size(34, 13);
@@ -126,6 +129,7 @@
             // 
             // addTextBox
             // 
+            this.addTextBox.Enabled = false;
             this.addTextBox.Location = new System.Drawing.Point(45, 37);
             this.addTextBox.Name = "addTextBox";
             this.addTextBox.Size = new System.Drawing.Size(146, 20);
@@ -166,6 +170,7 @@
             this.openMenuItem.Name = "openMenuItem";
             this.openMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openMenuItem.Text = "Open";
+            this.openMenuItem.Click += new System.EventHandler(this.OpenMenuItem_Click);
             // 
             // saveMenuItem
             // 
@@ -183,6 +188,7 @@
             this.exitMenuItem.Name = "exitMenuItem";
             this.exitMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitMenuItem.Text = "Exit";
+            this.exitMenuItem.Click += new System.EventHandler(this.ExitMenuItem_Click);
             // 
             // helpMenuItem
             // 

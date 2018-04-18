@@ -127,9 +127,50 @@ namespace ToDoList
                 addTextBox.Text = "";
                 todoListBox.Items.Clear();
 
-                Text = newDialog.Controls.Find("nameTextBox", false)[0].Text + " - ToDo List";
+                if (!newDialog.Controls.Find("nameTextBox", false)[0].Text.Trim().Equals(""))
+                {
+                    Text = newDialog.Controls.Find("nameTextBox", false)[0].Text + " - ToDo List";
+
+                    todoPanel.Enabled = true;
+                    addLabel.Enabled = true;
+                    addTextBox.Enabled = true;
+                    addButton.Enabled = true;
+                }
             }
             newDialog.Dispose();
+        }
+
+        private void ExitMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void OpenMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenDialog openDialog = new OpenDialog();
+
+            openDialog.StartPosition = FormStartPosition.CenterParent;
+
+            openDialog.ShowDialog();
+
+            if (openDialog.DialogResult == DialogResult.OK)
+            {
+                addTextBox.Text = "";
+                todoListBox.Items.Clear();
+
+                ComboBox openComboBox = openDialog.Controls.Find("nameComboBox", false)[0] as ComboBox;
+
+                if (openComboBox != null)
+                {
+                    Text = openComboBox.SelectedItem.ToString() + " - ToDo List";
+
+                    todoPanel.Enabled = true;
+                    addLabel.Enabled = true;
+                    addTextBox.Enabled = true;
+                    addButton.Enabled = true;
+                }
+            }
+            openDialog.Dispose();
         }
     }
 }
