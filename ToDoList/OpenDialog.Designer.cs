@@ -1,7 +1,11 @@
-﻿namespace ToDoList
+﻿using System.Data.SqlClient;
+
+namespace ToDoList
 {
     partial class OpenDialog
     {
+        SqlConnection connection = Program.GetConnection();
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -46,14 +50,17 @@
             // nameComboBox
             // 
             this.nameComboBox.FormattingEnabled = true;
+
             this.nameComboBox.Items.AddRange(new object[] {
             "ToDoList#1",
             "ToDoList#2",
             "ToDoList#3"});
+
             this.nameComboBox.Location = new System.Drawing.Point(13, 30);
             this.nameComboBox.Name = "nameComboBox";
             this.nameComboBox.Size = new System.Drawing.Size(209, 21);
             this.nameComboBox.TabIndex = 1;
+            this.nameComboBox.SelectedIndexChanged += new System.EventHandler(this.NameComboBox_SelectedIndexChanged);
             // 
             // cancelButton
             // 
@@ -92,6 +99,26 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private object[] GetItems()
+        {
+            object[] items;
+
+            SqlCommand command;
+
+            command = new SqlCommand("SELECT COUNT(*)", connection);
+
+            command = new SqlCommand("SELECT * FROM ToDoListDB.dbo.ToDoList", connection);
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    //items = reader[1];
+                }
+            }
+
+            return null;
         }
 
         #endregion

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,11 @@ namespace ToDoList
         public OpenDialog()
         {
             InitializeComponent();
+        }
+
+        private void NameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
